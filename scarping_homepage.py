@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-from my_scraping_functions import complex_sec_div_func, section_div_image_function,section_div_text_function
+from my_scraping_functions import section_div_text_scraping
 import requests
 import time 
 
@@ -125,9 +125,9 @@ def scraping_kodius_home_page(url = None):
         
         
         """  ARTICLES """
-        job_title  =  section_div_text_function("div","https://kodius.com/","article-wrapper","p","class","op-job-title")
-        job_experience = section_div_text_function("div","https://kodius.com/","article-wrapper","p","class","op-job-experience-location")
-        read_more = section_div_text_function("div","https://kodius.com/","article-wrapper","p","class","tech-read")
+        job_title  =  section_div_text_scraping("div","https://kodius.com/","article-wrapper","p","class","op-job-title")
+        job_experience = section_div_text_scraping("div","https://kodius.com/","article-wrapper","p","class","op-job-experience-location")
+        read_more = section_div_text_scraping("div","https://kodius.com/","article-wrapper","p","class","tech-read")
         print(job_title)
            
         for all in range(len(job_title)):
@@ -139,8 +139,8 @@ def scraping_kodius_home_page(url = None):
         
         print(""" OTHERS INFO """) 
         big_numbers = [6,9,30,1800]
-        headlines = section_div_text_function("div","https://kodius.com/","numbers-wrapper","div","class","headline")
-        text = section_div_text_function("div","https://kodius.com/","numbers-wrapper","div","class","text")
+        headlines = section_div_text_scraping("div","https://kodius.com/","numbers-wrapper","div","class","headline")
+        text = section_div_text_scraping("div","https://kodius.com/","numbers-wrapper","div","class","text")
         
         for result in range(len(big_numbers)):
             print(big_numbers[result])

@@ -1,4 +1,4 @@
-from my_scraping_functions import section_div_image_function,complex_sec_div_func,section_div_text_function
+from my_scraping_functions import section_div_image_scraping, section_div_text_scraping
 from bs4 import BeautifulSoup
 import time 
 import requests
@@ -138,8 +138,8 @@ def blog_kodius_clutch (url = None):
     more_from_business_section = soup.find("section",{"class":"section is-paddingless1"})
     title = more_from_business_section.h2.text
     block_item_content = more_from_business_section.find_all("div",{"class":"blog-item-content"})
-    images = section_div_image_function("section","https://kodius.com/blog/kodius-clutch-2021-rewind/","section is-paddingless1","div","class","blog-item-content","img")
-    text = section_div_text_function("section","https://kodius.com/blog/kodius-clutch-2021-rewind/","section is-paddingless1","div","class","blog-item-content")
+    images = section_div_image_scraping("section","https://kodius.com/blog/kodius-clutch-2021-rewind/","section is-paddingless1","div","class","blog-item-content","img")
+    text = section_div_text_scraping("section","https://kodius.com/blog/kodius-clutch-2021-rewind/","section is-paddingless1","div","class","blog-item-content")
     summary = []
     h2_text = []
     print(h2_text)

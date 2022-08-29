@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-from my_scraping_functions import section_div_image_function,section_div_text_function,complex_sec_div_func
+from my_scraping_functions import complex_sec_div_scraping, section_div_image_scraping, section_div_text_scraping 
 import requests
 import time
 
@@ -71,11 +71,11 @@ def custom_software (url = None):
     
     """ Make an appointment """
    
-    section = section_div_text_function("section","https://kodius.com/services/custom-software","row our-process-steps","div","class","head-box")
-    section_title = section_div_text_function("section","https://kodius.com/services/custom-software","row our-process-steps","h2","class","title")
-    section_text = section_div_text_function("section","https://kodius.com/services/custom-software","row our-process-steps","div","class","text-box")
+    section = section_div_text_scraping("section","https://kodius.com/services/custom-software","row our-process-steps","div","class","head-box")
+    section_title =section_div_text_scraping("section","https://kodius.com/services/custom-software","row our-process-steps","h2","class","title")
+    section_text = section_div_text_scraping("section","https://kodius.com/services/custom-software","row our-process-steps","div","class","text-box")
     section_image = soup.find("section",{"class":"row our-process-steps"}).find_all("img")
-    section_image = section_div_image_function("section","https://kodius.com/services/custom-software","row our-process-steps")
+    section_image = section_div_image_scraping("section","https://kodius.com/services/custom-software","row our-process-steps")
     for result in range(len(section)):
         print(section[result])
         print("Title: ",section_title[result])
@@ -106,10 +106,10 @@ def custom_software (url = None):
     title = technologies_section.h2.text 
     print(title)   
 
-    all_links = section_div_text_function("section","https://kodius.com/services/custom-software","row techs","ul","class","tech-by-tech","a")
-    all_images = section_div_image_function("section","https://kodius.com/services/custom-software","row techs","ul","class","tech-by-tech","img")
-    all_title = section_div_text_function("section","https://kodius.com/services/custom-software","row techs","ul","class","tech-by-tech","h4")    
-    all_desc = section_div_text_function("section","https://kodius.com/services/custom-software","row techs","ul","class","tech-by-tech","p")        
+    all_links = section_div_text_scraping("section","https://kodius.com/services/custom-software","row techs","ul","class","tech-by-tech","a")
+    all_images = section_div_image_scraping("section","https://kodius.com/services/custom-software","row techs","ul","class","tech-by-tech","img")
+    all_title = section_div_text_scraping("section","https://kodius.com/services/custom-software","row techs","ul","class","tech-by-tech","h4")    
+    all_desc = section_div_text_scraping("section","https://kodius.com/services/custom-software","row techs","ul","class","tech-by-tech","p")        
     for all in range(len(all_links)):
         print(all_title[all])
         print(f"Title link: https:/{all_links[all]}")    
@@ -165,9 +165,9 @@ def ux_ui (url = None):
     title = process.h2.text
     print(title)
     print("*"*29)
-    number = complex_sec_div_func("section","https://kodius.com/services/ui-ux","row ux-ui-process","div","class","ux-process-grid","div","class","ux-number")
-    title_elements = complex_sec_div_func("section","https://kodius.com/services/ui-ux","row ux-ui-process","div","class","ux-process-grid","div","class","ux-title")
-    text_elements = complex_sec_div_func("section","https://kodius.com/services/ui-ux","row ux-ui-process","div","class","ux-process-grid","div","class","ux-text")
+    number = complex_sec_div_scraping("section","https://kodius.com/services/ui-ux","row ux-ui-process","div","class","ux-process-grid","div","class","ux-number")
+    title_elements = complex_sec_div_scraping("section","https://kodius.com/services/ui-ux","row ux-ui-process","div","class","ux-process-grid","div","class","ux-title")
+    text_elements = complex_sec_div_scraping("section","https://kodius.com/services/ui-ux","row ux-ui-process","div","class","ux-process-grid","div","class","ux-text")
     print(text_elements)
     
     for result in range(len(number)):
@@ -284,8 +284,8 @@ def hire_developers(url = None):
         
     print(""" OTHERS INFO """) 
     big_numbers = [6,9,30,1800]
-    headlines = section_div_text_function("div","https://kodius.com/services/hire-developers","numbers-wrapper","div","class","headline")
-    text = section_div_text_function("div","https://kodius.com/services/hire-developers","numbers-wrapper","div","class","text")
+    headlines = section_div_text_scraping("div","https://kodius.com/services/hire-developers","numbers-wrapper","div","class","headline")
+    text = section_div_text_scraping("div","https://kodius.com/services/hire-developers","numbers-wrapper","div","class","text")
     
     for result in range(len(big_numbers)):
         print(big_numbers[result])

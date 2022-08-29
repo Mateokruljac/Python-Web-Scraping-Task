@@ -3,7 +3,7 @@ import requests
 
 
 
-def section_div_text_function(tag,link,class_,elements,clas = None,class_value = None,more_elements = None):
+def section_div_text_scraping(tag,link,class_,elements,clas = None,class_value = None,more_elements = None):
     """  tag indicates the element you are searching for, SECTION or DIV.
     link is the link address from which we search.
     class_ is the name of the tag class.
@@ -41,7 +41,7 @@ def section_div_text_function(tag,link,class_,elements,clas = None,class_value =
     return element_list
 
 
-def complex_sec_div_func(tag,link,class_,elements,clas,class_value,more_elements,c_val = None,c_val_2 = None):
+def complex_sec_div_scraping(tag,link,class_,elements,clas,class_value,more_elements,c_val = None,c_val_2 = None):
     """ tag indicates the element you are searching for, SECTION or DIV.
     link is the link address from which we search.
     class_ is the name of the tag class.
@@ -67,7 +67,7 @@ def complex_sec_div_func(tag,link,class_,elements,clas,class_value,more_elements
 
 
 
-def section_div_image_function(tag,link,class_,elements = "img",clas = None,class_value = None,more_elements = None):
+def section_div_image_scraping(tag,link,class_,elements = "img",clas = None,class_value = None,more_elements = None):
     """  tag indicates the element you are searching for, SECTION or DIV.
     link is the link address from which we search.
     class_ is the name of the tag class.
