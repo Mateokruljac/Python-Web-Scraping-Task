@@ -61,7 +61,7 @@ def get_shortest_path (url):
 
         my_cursor.execute(f"SELECT url_value from url_path where url_value like 'https://{START_URL}%' and url_value like '%{END_URL}' or url_value like '%{END_URL}/' ")
         get_value = my_cursor.fetchall()
-        #result has not to be empty list   
+        #result cannot be empty list   
         if bool(get_value) is not False:
             get_value_empty_list = []
            
