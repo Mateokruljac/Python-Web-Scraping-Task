@@ -3,14 +3,14 @@ from custom_database import split_function,my_cursor
 import unittest
 
 class TestException(unittest.TestCase):    
-    counter = 1
+    
     def setUp(self):
         self.name = self.shortDescription()
         print(f"Test: {self.name}")
         
     def tearDown(self):
-        print(f"{self.counter}. test done!")
-        self.counter += 1
+        print("Test done!")
+        
     
     @classmethod
     def tearDownClass(cls):
